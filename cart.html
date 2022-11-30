@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>M.A Travel Agency</title>
+<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<script type="text/javascript">
+function read(){
+document.getElementById("packnumber").value = sessionStorage.getItem("packnumber")
+document.getElementById("packcountry").value = sessionStorage.getItem("packcountry")
+document.getElementById("packprice").value = sessionStorage.getItem("packprice") 
+document.getElementById("paymentprice").value = sessionStorage.setItem("paymentprice", paymentprice) 
+document.getElementById("passenger").value = sessionStorage.setItem("passenger", passenger) 
+document.getElementById("total").value = sessionStorage.setItem("total", total) 
+}
+function remove(){
+document.getElementById("packnumber").value = ""
+document.getElementById("packcountry").value = ""
+document.getElementById("packprice").value = "" 
+document.getElementById("paymentprice").value = ""
+document.getElementById("passenger").value = ""
+document.getElementById("total").innerHTML = ""
+
+alert("The cart is empty, checkout our pacakges!") 
+}
+
+function calculate(){
+var paymentprice = document.getElementById("paymentprice").value 
+var passenger = document.getElementById("passenger").value 
+var total = paymentprice * passenger
+
+document.getElementById("total").innerHTML = total
+}
+
+
+function send(){
+var pacnumber = document.getElementById("packnumber").value
+var countrycity = document.getElementById("packcountry").value
+var pacprice = document.getElementById("packprice").value
+var paymentprice = document.getElementById("paymentprice").value
+var passenger = document.getElementById("passenger").value
+var total = document.getElementById("total").innerHTML
+
+sessionStorage.setItem("packnumber", pacnumber) 
+sessionStorage.setItem("packcountry", countrycity) 
+sessionStorage.setItem("packprice", pacprice) 
+sessionStorage.setItem("paymentprice", paymentprice) 
+sessionStorage.setItem("passenger", passenger) 
+sessionStorage.setItem("total", total) 
+
+alert("Payment confirmed successfully!")
+
+document.getElementById("packnumber").value = ""
+document.getElementById("packcountry").value = ""
+document.getElementById("packprice").value = "" 
+document.getElementById("paymentprice").value = ""
+document.getElementById("passenger").value = ""
+document.getElementById("total").innerHTML = ""
+}
+</script>
+</head>
+<body onload="read()">
+<div id="menu"> <!-- menu for all pages -->
+<table> <!-- container of menu for all pages --> 
+<tr>
+<td><img src="img/logo.png" alt="logo"></td> 
+<td><a href="index.html">HOME</a></td>
+<td><a href="aboutus.html">ABOUT US</a></td>
+<td><a href="contact.html">CONTACT</a></td>
+<td><a href="packages.html">PACKAGES</a></td> 
+<td><a href="cart.html">CART</a></td> 
+<td><a class="button" href="review.html">CUSTOMERS REVIEW</a></td>
+</tr>
+</table>
+</div>
+<div id="cartright"> <!-- division of right side in cart page displaying an img -->
+<img src="img/cart.jpg" alt="cart">
+</div>
+<div id="cartleft"> <!-- division of left side in cart page -->
+<h2><img src="img/troly.png" alt="troly">Your cart</h2>
+<table>
+<tr>
+<td>Package Name :</td>
+<td><input type="text" id="packnumber" size="25" required></td> <!-- input to display pacakge name -->
+</tr>
+<tr>
+<td>Country, City :</td>
+<td><input type="text" id="packcountry" size="25" required></td> <!-- input to display pacakage location -->
+</tr>
+<tr>
+<td>Pacakge Price :</td>
+<td><input type="text" id="packprice" size="25" required></td> <!-- input to display pacakge price -->
+</tr>
+</table>
+<h2><img src="img/money.png" alt="money">Total payment</h2>
+<form method="get" onsubmit="calculate() ; return false;"> <!-- form to calculate the total price -->
+<table>
+<tr>
+<td>Package Price :</td>
+<td><input type="number" id="paymentprice" min="0" required></td> <!-- input for pacakge price -->
+</tr>
+<tr>
+<td>Number of Passengers :</td>
+<td><input type="number" id="passenger" min="1" max="8" required></td> <!-- input for passenger number -->
+</tr> 
+<tr id="card"> <!-- division to be used in css for card img -->
+<td>We Accept :</td>
+<td><img src="img/card.png" alt="card"></td>
+</tr>
+<tr>
+<td><input type="submit" value="CONTINUE"></td> <!-- after click the total price will be displayed after calculate function in java script work -->
+</tr>
+</table>
+</form>
+<p>Total Price :<span id="total"></span></p> 
+<table>
+<tr>
+<td><input type="submit" value="CONFIRM" onclick="send()"></td> <!-- after click the send function in java script will work -->
+<td><input type="button" value="CLEAR CART" onclick="remove()"></td> <!-- after click the remove function in java script will work -->
+<td><input type="button" value="RETRIEVE LAST PAYMENT" onclick="read()"></td> <!-- after click the read function in java script will work -->
+</tr>
+</table>
+</div>
+</body>

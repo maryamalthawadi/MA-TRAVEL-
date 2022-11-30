@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>M.A Travel Agency</title>
+<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<script type="text/javascript">
+function send() {
+var name = document.getElementById("name").value
+var email = document.getElementById("email").value
+var subject = document.getElementById("subject").value
+var comment = document.getElementById("comment").value
+
+localStorage.setItem("name", name) 
+localStorage.setItem("email", email) 
+localStorage.setItem("subject", subject) 
+localStorage.setItem("comment", comment) 
+
+alert("Form sent successfully!")
+}
+</script>
+</head>
+<body>
+<div id="menu"> <!-- menu for all pages -->
+<table> <!-- container of menu for all pages -->
+<tr>
+<td><img src="img/logo.png" alt="logo"></td> 
+<td><a href="index.html">HOME</a></td>
+<td><a href="aboutus.html">ABOUT US</a></td>
+<td><a href="contact.html">CONTACT</a></td>
+<td><a href="packages.html">PACKAGES</a></td> 
+<td><a href="cart.html">CART</a></td> 
+<td><a class="button" href="review.html">CUSTOMERS REVIEW</a></td>
+</tr>
+</table>
+</div>
+<div id="title"> <!-- division for the title for most pages to be used in css -->
+<h1>Get In Touch With Us!</h1>
+</div>
+<div id="contactleft"> <!-- division of left side in contact page -->
+<h2><img src="img/call.png" alt="call">Call us</h2>
+<ul>
+<li>579-522-927</li>
+<li>579-883-109</li>
+</ul>
+<h2><img src="img/mail.png" alt="mail">Email us</h2> 
+<ul>
+<li><a href="mailto:ma.travel@outlook.com">ma.travel@outlook.com</a></li> <!-- link to agency email -->
+<li><a href="mailto:ma.manager@outlook.com">ma.manager@outlook.com</a></li> <!-- link to manager email -->
+</ul>
+</div>
+<div id="contactright"> <!-- division of right side in contact page -->
+<h2><img src="img/chat.png" alt="chat">Contact form</h2>
+<form method="get" onsubmit="send()"> <!-- form to save values after send -->
+<table>
+<tr>
+<td>Name :</td>
+<td><input type="text" id="name" required></td> <!-- input for the customers name -->
+</tr>
+<tr>
+<td>Email :</td>
+<td><input type="email" id="email" required></td> <!-- input for the customers email -->
+</tr>
+<tr>
+<td>Subject :</td>
+<td><input type="text" id="subject" required></td> <!-- input for the customers form subject -->
+</tr>
+<tr>
+<td>Comment :</td>
+<td><textarea id="comment" rows="5" cols="20" required></textarea></td> <!-- text area for the customers form comment -->
+</tr>
+<tr>
+<td><input type="submit" value="SEND FORM"></td> <!-- after click the send function in java script will work -->
+</tr>
+</table>
+</form>
+</div>
+</body>

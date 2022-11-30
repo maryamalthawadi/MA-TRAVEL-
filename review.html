@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>M.A Travel Agency</title>
+<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<script type="text/javascript">
+function read() {
+document.getElementById("customername").value = sessionStorage.getItem("customername")
+document.getElementById("review").value = sessionStorage.getItem("review")
+}
+
+function remove() {
+document.getElementById("displayname").innerHTML = ""
+document.getElementById("displayreview").innerHTML = ""
+
+alert("Review deleted successfully!") 
+
+}
+function send() {
+var customername = document.getElementById("customername").value
+var review = document.getElementById("review").value
+
+sessionStorage.setItem("customername", customername) 
+sessionStorage.setItem("review", review) 
+
+alert("Review sent successfully, thank you for sharing!")
+
+document.getElementById("customername").value = ""
+document.getElementById("review").value = ""
+
+display()
+}
+function display() {
+document.getElementById("displayname").innerHTML = sessionStorage.getItem("customername")
+document.getElementById("displayreview").innerHTML = sessionStorage.getItem("review")
+}
+</script>
+</head>
+<body onload="display()">
+<div id="menu"> <!-- menu for all pages -->
+<table> <!-- container of menu for all pages --> 
+<tr>
+<td><img src="img/logo.png" alt="logo"></td> 
+<td><a href="index.html">HOME</a></td>
+<td><a href="aboutus.html">ABOUT US</a></td>
+<td><a href="contact.html">CONTACT</a></td>
+<td><a href="packages.html">PACKAGES</a></td> 
+<td><a href="cart.html">CART</a></td> 
+<td><a class="button" href="review.html">CUSTOMERS REVIEW</a></td>
+</tr>
+</table>
+</div>
+<div id="secondtitle"> <!-- division for the title for some pages to be used in css -->
+<h1>Our customer's review!</h1>
+</div>
+<div id="reviews"> <!-- division to display customers reviews --> 
+<table>
+<tr>
+<td>Tom Johnson</td>
+<td>This agency provides an extremely good service for its customers,<br>great support staff and excellent packages</td>
+</tr>
+<tr>
+<td>Anne Green</td>
+<td>This is a wonderfully easy to use the website for booking travel<br>tickets, I have been using it to book my tickets<br>since it's established</td>
+</tr>
+<tr>
+<td>Mia Lee</td>
+<td>A friend of mine recommended me to book for my adventures travels<br>in this agency as it provides well organized packages for different<br>countries around the world</td>
+</tr>
+<tr>
+<td id="displayname"></td> <!-- id to display input of customer name -->
+<td id="displayreview"></td> <!-- id to display input of customer review -->
+</tr>
+</table>
+</div>
+<div id="displaybox"> <!-- division to display customer input in the table -->
+<table>
+<tr>
+<td><input type="button" value="EDIT" onclick="read()"></td> <!-- after click the read function in java script will work -->
+<td><input type="button" value="DELETE" onclick="remove()"></td> <!-- after click the remove function in java script will work -->
+</tr>
+</table>
+</div>
+<div id="yourreview"> <!-- division for the buttom of review page  -->
+<h2><img src="img/review.png" alt="review">Add Review</h2>
+<table>
+<tr>
+<td>Customers Name :</td>
+<td><input id="customername" type="text" required></td> <!-- input for the customer name -->
+</tr>
+<tr>
+<td>Review :</td>
+<td><textarea id="review" rows="5" cols="20" required></textarea></td> <!-- text area for the customer name -->
+</tr>
+<tr>
+<td><input type="submit" value="SAVE" onclick="send()"> </td> <!-- after click the send function in java script will work -->
+</tr>
+</table>
+</div>
+</body>

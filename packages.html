@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>M.A Travel Agency</title>
+<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"> 
+<script type="text/javascript">
+function order(selected){
+var pack = ""
+var countrycity = ""
+var price = ""
+if (selected == 1){
+pack = "Package One"
+countrycity = "KOREA, SEOUL"
+price = "$1,400"
+}
+else if (selected == 2){
+pack = "Package Two"
+countrycity = "JAPAN, TOKYO"
+price = "$1,800"
+}
+else if (selected == 3){
+pack = "Package Three"
+countrycity = "NEWYORK, USA"
+price = "1,600"
+}
+sessionStorage.setItem("packnumber", pack)
+sessionStorage.setItem("packcountry", countrycity)
+sessionStorage.setItem("packprice", price)
+			   
+location.href = "cart.html"
+}
+</script>
+</head>
+<body>
+<div id="menu"> <!-- menu for all pages --> 
+<table> <!-- container of menu for all pages --> 
+<tr>
+<td><img src="img/logo.png" alt="logo"></td> 
+<td><a href="index.html">HOME</a></td>
+<td><a href="aboutus.html">ABOUT US</a></td>
+<td><a href="contact.html">CONTACT</a></td>
+<td><a href="packages.html">PACKAGES</a></td> 
+<td><a href="cart.html">CART</a></td> 
+<td><a class="button" href="review.html">CUSTOMERS REVIEW</a></td>
+</tr>
+</table>
+</div>
+<div id="secondtitle"> <!-- division for the title for some pages to be used in css -->
+<h1>Get In Touch With Us!</h1>
+</div>
+<div id="packages"> <!-- division for all packages -->
+<div id="first"> <!-- division for first package -->
+<img src="img/korea.jpeg" alt="korea">
+<h2>Package One</h2>
+<h4>KOREA, SEOUL</h4>
+<ul>
+<li>Flight + Hotel</li>
+<li>8 days + 6 nights</li>
+<li>5 star hotel</li>
+<li>from $1,400</li>
+</ul>
+<h3 onclick="order(1)">Add to cart</h3> <!-- after click the order 1 loop in java script will work -->
+</div>
+<div id="second"> <!-- division for second package -->
+<img src="img/japan.jpeg" alt="japan">
+<h2>Package Two</h2>
+<h4>JAPAN, TOKYO</h4>
+<ul>
+<li>Flight + Hotel</li>
+<li>6 days + 5 nights</li>
+<li>4 star hotel</li>
+<li>from $1,800</li>
+</ul>
+<h3 onclick="order(2)">Add to cart</h3> <!-- after click the order 2 loop in java script will work -->
+</div>
+<div id="third"> <!-- division for third package -->
+<img src="img/usa.jpeg" alt="usa">
+<h2>Package Three</h2>
+<h4>USA, NEWYORK</h4>
+<ul>
+<li>Flight + Hotel</li>
+<li>4 days + 3 nights</li>
+<li>4 star hotel</li>
+<li>from $1,600</li>
+</ul>
+<h3 onclick="order(3)">Add to cart</h3> <!-- after click the order 3 loop in java script will work -->
+</div>
+</div>
+</body>

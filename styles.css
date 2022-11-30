@@ -1,0 +1,53 @@
+body{ background-color: #2b6951; font-family:arial; margin:0; padding:0;} /** body for all pages **/  
+#title h1{color:#f1f1df; padding-left:50px;} /** title of all pages **/ 
+
+#left{float:left;}  /** left side of home page **/ 
+
+#menu {float:center; border-collapse:collapse; font-weight:bold;} #menu img{hight:200px; width:200px;} 
+#menu a{color:#f1f1df;} #menu a:hover{color:black;} #menu td{text-align:center; padding:23px;} /** menu of all pages **/ 
+
+#main {float:right; width:80%;} #main h1 {color:#f9b549;} #main h3 {color:#f1f1df;} /** center of home page **/ 
+
+#homebutton {display:block; background:url(img/button.png); background-repeat:no-repeat; 
+background-size:100%; height:100px; width:380px; text-align:center; padding-top:20px;
+text-decoration:none; font-size:18px; color:black; font-weight:bold;} #homebutton:hover{color:#f1f1df;} /** home page review button **/ 
+
+#right{ float:right;} #right img { hight:350px; width:350px; padding:36px;}  /** right side image of home page **/ 
+
+.button {display:block; background: url(img/button.png); background-repeat: no-repeat; 
+background-size:100%; height:100px; width:380px; text-align:center; padding-top:15px; margin-top:50px;
+text-decoration:none; font-size:18px; color:black; font-weight:bold;} .button:hover {color:#f1f1df;} /**all pages review button **/ 
+
+#aboutus h1{float:left; padding-left:60px; margin-top:120px; color:#f1f1df;} 
+#aboutus h3{float:right; padding-right:220px; padding-bottom:10px; color:#f1f1df;} /** about the agency paragraph **/
+
+#buttom{padding-left:250px;} #buttom img{width:800px;} /** about us buttom image **/ 
+
+#contactleft{float:left; padding-left:100px; padding-right:350px;}  #contactleft h2{color:#f9b549;} #contactleft img{height: 70px; width: 70px;} 
+#contactleft ul{padding-left:80px; color:#f1f1df;} #contactleft a{color:#f1f1df;} #contactleft a:hover{color:black;} /** left side of contact page**/ 
+
+#contactright{ folat:right; padding-right:100px;} #contactright h2{color:#f9b549;} #contactright img{height: 70px; width: 70px;} 
+#contactright td{padding:5px; color:#f1f1df;} /** right side of contact page**/
+
+#secondtitle {color:#f9b549; padding-left:450px;}  /** second title of all pages **/ 
+
+#packages{margin:0 auto; padding-left:90px;} #packages img{height: 300px; width: 300px;} #packages h2{color:#f9b549; padding-left:80px;}
+#packages h3{color:#f9b549; padding-left:10px; text-decoration: underline;} #packages h4{color:black; padding-left:100px;}  #packages h3{padding-left:100px;} 
+#packages ul{color:black; padding-left:100px; font-weight:bold;} /** all three packages **/ 
+
+#first{float:left; padding-right:90px;} #second{float:left; padding-right:90px;} #third{float:left;} /** all three packages seperately**/ 
+
+#cartright {float:right; padding-right:100px;} #cartright img{height: 580px; width: 430px; padding-bottom:40px;} /** cart page right side **/
+
+#cartleft{float:left; padding-left:150px;} #cartleft h2{color:#f9b549;} #cartleft img{height: 70px; width: 70px;} 
+#cartleft td{padding:5px; color:#f1f1df;} #cartleft p {padding:5px; color:#f1f1df;}/** cart page left side **/
+#card img {width:205px;} /** payment method image **/ 
+
+#reviews {padding-left:200px;} #reviews table{padding-left:40px;} 
+#reviews td{padding:30px; border: 5px solid #f9b549;  background-color:#f1f1df;} /** review page customer reviews **/
+
+
+#yourreview{ padding-left:380px;} #yourreview h2{color:#f9b549;} #yourreview img{height: 70px; width: 70px;} 
+#yourreview td{padding:5px; color:#f1f1df;} /** review page add review **/
+
+#displaybox {padding-left:600px;} /** review page display review on table**/
